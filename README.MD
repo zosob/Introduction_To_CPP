@@ -4,23 +4,23 @@ Welcome to the beginner-friendly C++ programming repository! This repository is 
 
 ## Weekly Topics
 
-### Week 3: Branching in C++
-In Week 3, we explored the concept of branching, which allows programs to make decisions based on conditions. Topics covered include:
-- Introduction to conditional statements
-- Using `if` statements to control program flow
-- Examples of simple branching logic
+✅ Completed Weeks (1–9)
 
-### Week 4: Advanced Branching with If-Else
-In Week 4, we built upon the basics of branching and introduced more advanced decision-making structures:
-- Using `if-else` statements for multiple conditions
-- Nested `if-else` statements
-- Practical examples demonstrating complex branching logic
+Week 1: Introduction to C++ and setting up the development environment
+Week 2–3: Variables, data types, operators, and expressions
+Week 4: Branching with if, else, and switch
+Week 5: Loops (for, while, do-while)
+Week 6: Arrays and vectors
+Week 7–8: User-defined functions
+Week 9: Objects and classes
 
-## Getting Started
-To get started with this repository:
-1. Clone the repository to your local machine.
-2. Navigate to the weekly folders to find code examples and exercises.
-3. Compile and run the C++ files using your preferred compiler.
+🔜 Upcoming Weeks (10–15)
+
+Week 10: Inheritance and polymorphism
+Week 11: Pointers
+Week 12: Streams
+Week 13 & 15: Searching and sorting algorithms
+Week 14: Thanksgiving Break
 
 ## Contribution
 Feel free to contribute by adding new examples, improving documentation, or suggesting enhancements. Fork the repository and submit a pull request with your changes.
