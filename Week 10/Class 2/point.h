@@ -1,0 +1,26 @@
+#ifndef POINT_H
+#define POINT_H
+
+class point{
+    private:
+        int x, y;
+
+    public:
+        //Constructors...
+        point();                            // Default constrcutor...
+        point(int x, int y);                // Parameterized constructor...
+
+        //Getter functions...
+        int getX() const;
+        int getY() const;
+
+        //Operator overloads...
+        point operator+(const point& other) const;  // Add two points...
+        bool operator==(const point& other) const;  // Compare two points...
+
+        //Display function...
+        void print() const;
+};
+
+
+#endif
