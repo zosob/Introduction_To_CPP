@@ -1,5 +1,6 @@
 #include<iostream>
 #include<cstring>
+#include<memory>
 using namespace std;
 
 class student{
@@ -10,6 +11,24 @@ class student{
         student(const char* n = "Unnamed", int idNum = 0) : id(idNum) {
             name = new char[strlen(n)+1];
             strcpy(name, n);
+        }
+
+        //Deep copy constructor...
+        student(const student& other){
+            this->id = other.id;
+            name = new char[strlen(other.name) + 1];
+            strcpy(name, other.name);
+        }
+
+        // Overloading the operator...
+        student& operator=(const student& other){
+            if(this != &other){
+                delete[] name;
+                id = other.id;
+                name = new char[strlen(other.name) + 1];
+                strcpy(name, other.name);
+            }
+            return *this;
         }
 
         void display() const{
@@ -30,6 +49,27 @@ class roster{
         roster(int cap = 2) : size(0), capacity(cap) {
             students = new student[capacity];
         }
+        
+    
+    roster(const roster& other){
+        size = other.size;
+        capacity = other.capacity;
+        students = new student[capacity];
+        for(int i = 0; i < size; i++)
+            students[i] = other.students[i];
+    }
+
+    roster operator=(const roster& other){
+        if(this != &other){
+            delete[] students;
+            size = other.size;
+            capacity = other.capacity;
+            students = new student[capacity];
+            for(int i = 0; i < size; i++)
+                students[i] = other.students[i];
+        }
+        return *this;
+    }
     
     void addStudent(const char* name, int id){
         if(size == capacity)
@@ -55,8 +95,23 @@ class roster{
 
     ~roster(){
         delete[] students;
-    }
+    }  
+
 };
+
+//Smart pointers...
+
+    void smartPointerDemo(){
+        cout<<"\n ===== Smart Pointer Demo ====="<<endl;
+
+        unique_ptr<student> uptr = make_unique<student>("Smart Alice", 2001);
+        uptr->display();
+
+        shared_ptr<student> sp1 = make_shared<student>("Shared Bob", 2002);
+        shared_ptr<student> sp2 = sp1;
+        cout<<"Shared count: "<<sp1.use_count() <<endl;
+        sp2->display();
+}
 
 int main(){
     cout<<"=== Dynamic Roster Manager ==="<<endl;
@@ -66,4 +121,17 @@ int main(){
     cs201.addStudent("Robert", 102);
     cs201.addStudent("Sima", 103);
     cs201.show();
+
+    cout<<"\nCopying roster..."<<endl;
+    roster copy = cs201;
+    copy.show();
+
+    cout<<"\nAdding new student to the original roster..."<<endl;
+    cs201.addStudent("Diana", 104);
+    cs201.show();
+
+    cout<<"\nCopy roster remains unchanged: "<<endl;
+    copy.show();
+
+    smartPointerDemo();
 }
