@@ -3,6 +3,8 @@
         "*.txt": "cpp",
         "iostream": "cpp",
         "istream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "string": "cpp",
+        "iomanip": "cpp"
     }
 }
