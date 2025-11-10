@@ -13,12 +13,11 @@ Week 5: Loops (for, while, do-while)
 Week 6: Arrays and vectors
 Week 7–8: User-defined functions
 Week 9: Objects and classes
-
-🔜 Upcoming Weeks (10–15)
-
 Week 10: Inheritance and polymorphism
 Week 11: Pointers
 Week 12: Streams
+
+🔜 Upcoming Weeks 
 Week 13 & 15: Searching and sorting algorithms
 Week 14: Thanksgiving Break
 
