@@ -77,4 +77,25 @@ int main(){
     double avgMid1 = sumMid1 / count;
     double avgMid2 = sumMid2 / count;
     double avgFinal = sumFinal / count;
+
+    //Write to report.txt
+    ofstream outFile;
+    outFile.open("C:\\Users\\ck8758cn.e\\OneDrive - Minnesota State\\Documents\\Semesters\\Fall 2025\\CSCI 201\\Introduction_To_C++\\Week 12\\report.txt");
+
+    if(outFile.fail()){
+        cerr<<"Error: Could not create report.txt\n";
+        return 1;
+    }
+
+    for(int i =0; i < count; i++){
+        outFile << lastNames[i] << '\t' << firstNames[i] <<'\t'<< midterm1[i] <<'\t' << midterm2[i] << '\t' << finals[i] << '\t' << letterGrades[i] << endl;
+    }
+
+    outFile << fixed << setprecision(2);
+    outFile << "\n\nAverages:\nMidterm 1 :" << avgMid1 <<", Midterm 2: "<<avgMid2<<", Final: "<<avgFinal<<endl;
+
+    outFile.close();
+
+    cout<<"Report successfully written to report.txt!";
+
 }
