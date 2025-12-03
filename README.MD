@@ -26,9 +26,6 @@ Week 11: Pointers
 
 Week 12: Streams
 
-
-🔜 Upcoming Weeks 
-
 Week 13 & 15: Searching and sorting algorithms
 
 Week 14: Thanksgiving Break
